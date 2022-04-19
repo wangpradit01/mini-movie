@@ -6,6 +6,7 @@ import {
   CollectionIcon,
   HomeIcon,
   LidhtningBoltIcon,
+  LightningBoltIcon,
   SearchIcon,
   TicketIcon,
   UserIcon,
@@ -14,16 +15,21 @@ import {
 
 function Header() {
   return (
-    <header>
-        <div>
+    <header className="flex flex-col sm:flex-row m-5 justify-between items-center h-auto">
+        <div className="flex flex-grow justify-evenly max-w-2xl">
           <HeaderItem title="HOME" Icon={HomeIcon} />
+          <HeaderItem title="TRENDING" Icon={LightningBoltIcon} />
+          <HeaderItem title="VERIFIED" Icon={BadgeCheckIcon} />
+          <HeaderItem title="COLLECTION" Icon={CollectionIcon} />
+          <HeaderItem title="SERACH" Icon={SearchIcon} />
+          <HeaderItem title="ACOUNT" Icon={UserIcon} />
         </div>
         
         <img 
         className="object-contain"
         src="ticket.png"
-        width={50}
-        height={50}/>
+        width={80}
+        height={30}/>
     </header>
   )
 }
