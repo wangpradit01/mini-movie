@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Result } from "postcss";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import Results from "../components/Resultes";
@@ -13,7 +12,6 @@ export default function Home({ results}) {
         <title>mini movie</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
       <Nav />
       <Results results={results}/>
