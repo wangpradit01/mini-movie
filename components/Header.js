@@ -7,6 +7,7 @@ import {
   HomeIcon,
   LidhtningBoltIcon,
   LightningBoltIcon,
+  LogoutIcon,
   SearchIcon,
   TicketIcon,
   UserIcon,
@@ -28,17 +29,22 @@ function Header() {
           <a><HeaderItem title="HOME" Icon={HomeIcon} onClick={handleClick}/></a>
         </Link>
           
-          
+      
           <HeaderItem title="TRENDING" Icon={LightningBoltIcon} />
-          <HeaderItem title="VERIFIED" Icon={BadgeCheckIcon} />
+          {/* <HeaderItem title="VERIFIED" Icon={BadgeCheckIcon} /> */}
           <HeaderItem title="COLLECTION" Icon={CollectionIcon} />
-          <HeaderItem title="SERACH" Icon={SearchIcon} />
+          <HeaderItem title="SEAECH" Icon={SearchIcon} />
           
           <Link href="/login">
           <a><HeaderItem title="ACOUNT" Icon={UserIcon} onClick={handleClick}/></a>
         </Link>
+
+        <HeaderItem title="LOGOUT" Icon={LogoutIcon} />
+
         </div>
-        
+       
+
+
         <img 
         className="object-contain"
         src="ticket.png"
