@@ -1,8 +1,9 @@
 
 import { useState } from 'react'
-// import Head from 'next/head'
+import Head from 'next/head'
+import Layout from '../components/layout'
 import styles from '../styles/Home.module.css'
-import Header from '../components/Header'
+import Navbar from '../components/navbar'
 import axios from 'axios'
 import config from '../config/config'
 
@@ -39,9 +40,9 @@ export default function Register({ token }) {
     const registerForm = () => (
         <div className={styles.gridContainer}>
             <div>
-                {/* Username: */}
+                Username:
             </div>
-            <div className='flex flex-col outline-none h-[40px] p-2 mb-3 text-black rounded-mb'>
+            <div>
                 <input type="text"
                     name="username"
                     placeholder="username"
@@ -49,18 +50,18 @@ export default function Register({ token }) {
                 />
             </div>
             <div>
-                {/* Email: */}
+                Email:
             </div>
-            <div className='flex flex-col outline-none h-[40px] p-2 mb-3 text-black rounded-mb'>
+            <div>
                 <input type="email"
                     name="email"
                     placeholder="email"
                     onChange={(e) => setEmail(e.target.value)} />
             </div>
             <div>
-                {/* Password: */}
+                Password:
             </div>
-            <div className='flex flex-col outline-none h-[40px] p-2 mb-3 text-black rounded-mb'>
+            <div>
                 <input type="password"
                     name="password"
                     placeholder="password"
@@ -72,31 +73,31 @@ export default function Register({ token }) {
 
 
     return (
-        <div>
-   <Header />
-      
-   <div className='mt-20 justify-center max-w-[400px] p-[70px] mx-auto rounded-lg'
-            style={{background : `rgba(128,128,128,0.3)`}}>
-              
-                <h1 className='font-semibold text-2xl'>Register</h1>
-                <div>
-                {/* <button
+        <Layout>
+            <Head>
+                <title>Register</title>
+            </Head>
+            <div className={styles.container}>
+                <Navbar />
+                <h1>Register</h1>
+                <div><b>Token:</b> {token.substring(0, 15)}...
+                <button
                         onClick={() => { navigator.clipboard.writeText(token) }}>
                         Copy token
-                </button> */}
+                </button>
                 </div>
                 <br />
             Status:  {status}
                 <br /><br />
-                <div >
+                <div className={styles.content}>
                     {registerForm()}
                 </div>
 
-                <div className='flex justify-center px-4 py-3 border-none mt-5 text-base rounnded-md bg-[#e50914]'>
+                <div>
                     <button onClick={register}>Register</button>
                 </div>
             </div>
-            </div>
+        </Layout>
     )
 }
 

@@ -36,10 +36,13 @@ function Header() {
           <HeaderItem title="SEAECH" Icon={SearchIcon} />
           
           <Link href="/login">
-          <a><HeaderItem title="ACOUNT" Icon={UserIcon} onClick={handleClick}/></a>
+          <a><HeaderItem title="ACCOUNT" Icon={UserIcon} onClick={handleClick}/></a>
+        </Link>
+        <Link href="/logout">
+          <a><HeaderItem title="LOGOUT" Icon={LogoutIcon} onClick={handleClick}/></a>
         </Link>
 
-        <HeaderItem title="LOGOUT" Icon={LogoutIcon} />
+        {/* <HeaderItem title="LOGOUT" Icon={LogoutIcon} /> */}
 
         </div>
        
